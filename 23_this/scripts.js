@@ -3,14 +3,14 @@ let pessoa={
     idade:16,
     curso:'informatica',
     falar: function(){
-        console.log('olá, tudo bem?')
+        console.log('olá,',this.nome,'tudo bem?')
     },
     fazerAniversario:function(){
-        pessoa.idade+=1
+        this.idade+=1
     }
 }
 
-
+pessoa.falar()
 console.log(pessoa.idade);
 
 pessoa.fazerAniversario();
