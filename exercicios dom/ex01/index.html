@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+    <style>
+        div{
+            background-color: black;
+            color: white;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+        }
+        h1{
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="texto" onclick="clicar()" onmouseout="sair()" onmouseenter="entrar()">clique aqui</h1>
+    </div>
+    <script>
+        let texto=document.getElementById('texto')
+        function clicar(){
+            texto.innerText='você clicou'
+        }
+        function sair(){
+            texto.innerText='saiu'
+        }
+        function entrar(){
+            texto.innerText='entrou'
+        }
+    </script>
+</body>
+</html>
