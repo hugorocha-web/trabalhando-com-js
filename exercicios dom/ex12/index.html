@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to Do javaScript</title>
+    <style>
+        body{
+            background-image: linear-gradient(90deg, rgb(212, 30, 61), rgb(71, 1, 60));
+        }
+        h1, h2{
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 1.6em;
+        }
+        div#info{
+            margin: 0px auto;
+            max-width:347px;
+        }
+        #tarefa{
+            width: 300px;
+            height: 30px;
+        }
+        #butao{
+            width: 40px;
+            height: 35px;
+            margin-left: -5px;
+        }
+        #geral{
+            margin-top: 70px;
+        }
+        ul{
+            list-style-type: none;
+            display: block;
+            max-width: 400px;
+            margin: 0px auto;
+            padding: 0px;
+        
+        }
+        .botaomais, .botaomenos{
+            height: 30px;
+            width: 40px;
+            border: none;
+
+        }
+        .botaomenos{
+            padding-top: 3px;
+        }
+        .lis{
+            background-color: aliceblue;
+            width: 387px;
+            margin-bottom: 10px;
+            padding: 5px;
+            box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.185);
+            border: 1px solid rgba(0, 0, 0, 0.692);
+        }
+        .divbutao{
+           margin:  -20px 0px -1px 307px;
+        }
+        .paragrafoli{
+            padding: 0px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div id="geral">
+        <h1>Salve a sua próxima tarefa:</h1>
+        <div id="info">
+            <input type="text" id="tarefa" name="nome" placeholder="O que você vai fazer?">
+            <input type="button" value="+" id="butao">
+        </div>
+        <h2>Estas são as suas tarefas:</h2>
+    </div>
+    <script>
+        let situ=false
+        let butao = document.querySelector('#butao')
+
+        let ul = document.createElement('ul')
+        let body = document.querySelector('body')
+        body.appendChild(ul)
+        butao.addEventListener('click', clicar)
+        function clicar(){
+            let info = document.querySelector('#tarefa')
+            let li = document.createElement('li')
+            let botaomais = document.createElement('input')
+            let botaomenos = document.createElement('input')
+            let div = document.createElement('div')
+            let p = document.createElement('p')
+            p.classList='paragrafoli'
+            div.classList='divbutao'
+            li.classList='lis'
+            botaomais.classList= 'botaomais'
+            botaomais.setAttribute('type', 'button')
+            botaomais.setAttribute('value', '✓')
+            botaomenos.classList= 'botaomenos'
+            botaomenos.setAttribute('type', 'button')
+            botaomenos.setAttribute('value', 'x')
+            botaomais.style.color='green'
+            botaomenos.style.color='red'
+            console.log(botaomais)
+            p.textContent = info.value
+            ul.appendChild(li)
+            li.appendChild(p)
+            div.appendChild(botaomais)
+            div.appendChild(botaomenos)
+            li.appendChild(div)
+            botaomais.addEventListener('mouseenter', mouseentrarmais)
+            botaomais.addEventListener('mouseout', mousesairmais)
+            botaomenos.addEventListener('mouseenter', mouseentrarmenos)
+            botaomenos.addEventListener('mouseout', mousesairmenos)
+            botaomais.addEventListener('click', clicarmais)
+            botaomenos.addEventListener('click', clicarmenos)
+            
+        }
+        
+    
+ 
+        
+        function mouseentrarmais(e){
+            e.target.style.color = 'white'
+            e.target.style.background='green'
+            console.log('mouse entrou')
+        }
+        function mousesairmais(e){
+            e.target.style.color = 'green'
+            e.target.style.background='white'
+            console.log('mouse saiu')
+        }
+        function mouseentrarmenos(e){
+            e.target.style.color = 'white'
+            e.target.style.background='red'
+            console.log('mouse entrou')
+        }
+        function mousesairmenos(e){
+            e.target.style.color = 'red'
+            e.target.style.background='white'
+            console.log('mouse saiu')
+        }
+        function clicarmais(e){
+            e.target.parentElement.parentElement.style.color = 'white'
+            e.target.parentElement.parentElement.style.background='blue'
+            console.log('mouse clicou')
+        }
+        function clicarmenos(e){
+            e.target.parentElement.parentElement.remove()
+        }
+
+
+    </script>
+</html>
