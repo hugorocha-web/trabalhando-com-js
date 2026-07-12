@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+    <style>
+
+        #principal{
+            background-color: rgb(3, 7, 63);
+            width: 400px;
+            height: 250px;
+            margin: auto;
+            margin-top: 200px;
+            border-radius: 15px;
+        }
+        h1{
+            text-align: center;
+            color: aliceblue;
+            padding: 14px 0px 0px 0px;
+        }
+        .entrada{
+            margin: 0px 5px 40px 141px;
+            
+        }
+        #botoes{
+            margin-left: 73px;
+        }
+        h2{
+            text-align: center;
+            color: aliceblue;
+        }
+        #inputa{
+            width: 50px;
+        }
+        #inputb{
+            width: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="principal">
+        <h1>calculadora</h1>
+        <input type="text" id="inputa" class="entrada">
+        <input type="text" id="inputb">
+        <br>
+        <div id="botoes">
+            <input type="button" value="somar" id="somar" class="outrosb">
+            <input type="button" value="subtrair" id="subtrair" class="outrosb">
+            <input type="button" value="multiplicar" id="multiplicar" class="outrosb">
+            <input type="button" value="dividir" id="dividir" class="outrosb">
+        </div>
+        <h2 id="resultado"></h2>
+    </div>
+    <script>
+        let resultado = document.getElementById('resultado')
+        let inputa = document.getElementById('inputa')
+        let inputb = document.getElementById('inputb')
+        let botaosomar = document.getElementById('somar')
+        let botaosubtrair = document.getElementById('subtrair')
+        let botaomultiplicar = document.getElementById('multiplicar')
+        let botaodividir = document.getElementById('dividir')
+
+        botaosomar.addEventListener('click', () => clicar('somar'))
+        botaosubtrair.addEventListener('click', ()=> clicar('subtrair'))
+        botaomultiplicar.addEventListener('click', ()=> clicar('multiplicar'))
+        botaodividir.addEventListener('click', ()=> clicar('dividir'))
+        let valor = 0
+        resultado.innerText='resultado: ' + valor
+        function clicar(operador){
+            let in_a=Number(inputa.value)
+            let in_b=Number(inputb.value)
+            if(operador=='somar'){
+                valor=in_a+in_b
+                resultadoat()
+            }
+            else if(operador=='subtrair'){
+                valor=in_a-in_b
+                resultadoat()
+            }
+            else if(operador=='multiplicar'){
+                valor=in_a*in_b
+                resultadoat()
+            }
+            else{
+                valor=in_a/in_b
+                resultadoat()
+            }
+
+
+        }
+        function resultadoat(){
+            resultado.innerText='resultado: ' + valor
+        }
+
+
+    </script>
+</body>
+</html>
