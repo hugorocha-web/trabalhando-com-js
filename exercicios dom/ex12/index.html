@@ -93,6 +93,14 @@
             let botaomenos = document.createElement('input')
             let div = document.createElement('div')
             let p = document.createElement('p')
+            if(info.value.trim()==''){
+                alert('digite algo.')
+                return;
+            }
+            if(info.value.length>43){
+                alert('digite menos de 43 caracteres.')
+                return;
+            }
             p.classList='paragrafoli'
             div.classList='divbutao'
             li.classList='lis'
