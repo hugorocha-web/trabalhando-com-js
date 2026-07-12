@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+<body>
+    <ul id="lista">
+        <li id="1">banana</li>
+        <li id="2">péra</li>
+        <li id="3">melancia</li>
+        <li id="4">uva</li>
+    </ul>
+    <script>
+        let lista = document.getElementById('lista')
+        let l1 = document.getElementById('1')
+        let l2 = document.getElementById('2')
+        let l3 = document.getElementById('3')
+        let l4 = document.getElementById('4')
+        
+        l1.addEventListener('click', () => clicar(l1))
+        l2.addEventListener('click', () => clicar(l2))
+        l3.addEventListener('click', () => clicar(l3))
+        l4.addEventListener('click', () => clicar(l4))
+        function clicar(li){
+           lista.removeChild(li)
+        }
+    </script>
+</body>
+</html>

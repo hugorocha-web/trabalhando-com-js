@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+    <style>
+        #botaomais{
+            width: 100px;
+            height: 100px;
+        }
+        #botaomenos{
+            width: 100px;
+            height: 100px;
+        }
+        #botaozerar{
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        div{
+            width: 400px;
+            margin: auto;
+            margin-top: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="valor"></h1>
+        <input type="button" value="+" id="botaomais">
+        <input type="button" value="-" id="botaomenos">
+        <input type="button" value="zerar" id="botaozerar">
+    </div>
+    <script>
+        let cont=document.getElementById('valor')
+        let butaomais=document.getElementById('botaomais')
+        let butaomenos=document.getElementById('botaomenos')
+        let butaozerar=document.getElementById('botaozerar')
+
+        botaomais.addEventListener('click', clicarmais)
+        botaomenos.addEventListener('click', clicarmenos)
+        botaozerar.addEventListener('click', clicarzerar)
+        valor=0
+        cont.innerText='contador: '+valor
+        function clicarmais(){
+            valor++;
+            cont.innerText='contador: '+valor
+        }
+        function clicarmenos(){
+            valor--;
+            cont.innerText='contador: '+valor
+        }
+        function clicarzerar(){
+            valor=0;
+            cont.innerText='contador: '+valor
+        }
+
+        
+    </script>
+</body>
+</html>

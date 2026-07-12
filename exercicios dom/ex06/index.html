@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>banana</li>
+        <li>péra</li>
+        <li>melancia</li>
+        <li>uva</li>
+    </ul>
+    <input type="button" value="adicione uma maça" id="butao">
+    <script>
+        let lista = document.getElementById('lista')
+        let butao = document.getElementById('butao')
+        butao.addEventListener('click', clicar)
+        function clicar(){
+            let li = document.createElement('li')
+            lista.appendChild(li)
+            li.innerText='maça'
+        }
+    </script>
+</body>
+</html>

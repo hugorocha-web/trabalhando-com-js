@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    
+    <input type="text" name="" id="texto" oninput="clicar()">
+    <h2>seu texto é: </h2>
+    <h2 id="textopradigitar"></h2>
+    
+    <script>
+        let valor=document.getElementById('texto')
+        let digitar=document.getElementById('textopradigitar')
+        function clicar(){
+            digitar.innerText=valor.value
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
