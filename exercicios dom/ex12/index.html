@@ -116,31 +116,96 @@
         }
         
     
- 
         
         function mouseentrarmais(e){
-            e.target.style.color = 'white'
-            e.target.style.background='green'
-            console.log('mouse entrou')
+            const li = e.target.parentElement.parentElemente
+            if(li.classList.contains("clicado")){
+                e.target.style.color='white'
+                e.target.style.background='purple'
+
+            }
+            else{
+                e.target.style.color='white'
+                e.target.style.background='green'
+
+            }
+            
+            
         }
         function mousesairmais(e){
-            e.target.style.color = 'green'
-            e.target.style.background='white'
-            console.log('mouse saiu')
+            const li = e.target.parentElement.parentElement
+            if(li.classList.contains("clicado")){
+                e.target.style.color='white'
+                e.target.style.background='purple'
+            
+            }
+            else{
+                e.target.style.color='green'
+                e.target.style.background='white'
+            
+            }
+            
         }
         function mouseentrarmenos(e){
-            e.target.style.color = 'white'
-            e.target.style.background='red'
-            console.log('mouse entrou')
+            const li = e.target.parentElement.parentElement
+            if(li.classList.contains("clicado")){
+                e.target.style.color='white'
+                e.target.style.background='purple'
+            
+            }
+            else{
+                e.target.style.color='white'
+                e.target.style.background='red'
+            
+            }
+           
+            
         }
         function mousesairmenos(e){
-            e.target.style.color = 'red'
-            e.target.style.background='white'
-            console.log('mouse saiu')
+            const li = e.target.parentElement.parentElement
+            if(li.classList.contains("clicado")){
+                e.target.style.color='white'
+                e.target.style.background='purple'
+            
+            }
+            else{
+                e.target.style.color='red'
+                e.target.style.background='white'
+            
+            }
+           
+            
         }
         function clicarmais(e){
-            e.target.parentElement.parentElement.style.color = 'white'
-            e.target.parentElement.parentElement.style.background='blue'
+            const li = e.target.parentElement.parentElement
+            if(li.classList.contains("clicado")){
+                console.log('botao já clicado')
+                e.target.parentElement.parentElement.style.color = 'black'
+                e.target.parentElement.parentElement.style.background='white'
+                e.target.parentElement.parentElement.style.border='1px solid black'
+                e.target.style.color = 'green'
+                e.target.style.background='white'
+                e.target.nextElementSibling.style.color = 'red'
+                e.target.nextElementSibling.style.background='white'
+                li.classList.remove('clicado')
+                
+            }
+            else{
+                e.target.parentElement.parentElement.style.color = 'white'
+                e.target.parentElement.parentElement.style.background='purple'
+                e.target.parentElement.parentElement.style.border='none'
+                e.target.style.color = 'white'
+                e.target.style.background='purple'
+                e.target.nextElementSibling.style.color = 'white'
+                e.target.nextElementSibling.style.background='purple'
+                li.classList.add('clicado')
+            }
+            
+        
+            
+            
+            
+
             console.log('mouse clicou')
         }
         function clicarmenos(e){
