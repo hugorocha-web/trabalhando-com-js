@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex02</title>
+    <style>
+        div{
+            background-color: #0b0541;
+            width: 400px;
+            height: 200px;
+            border-radius: 13px;
+            color:white;
+            margin:auto
+
+        }
+        p{
+            text-align: center;
+            line-height: 90px;
+        }
+        #butao{
+            margin: 0px 153px ;
+            background-color: black;
+            color: aliceblue;
+            border: none;
+
+        }
+    </style>
 </head>
 <body>
-    <p>clique no botão abaixo</p>
-    <input type="button" value="clique aqui">
+    <div onmouseout="saiudiv()">
+        <p id="p">clique no botão abaixo</p>
+        <input type="button" value="clique aqui"  onclick="clicar()" id="butao" onmouseenter="entrar()" onmouseout="saiu()">
+    </div>
+    <script>
+        let p = document.getElementById('p')
+        function clicar(){
+            p.style.color='green'
+            p.style.fontSize='1.4em'
+        }
+        let botao = document.getElementById('butao')
+        function entrar(){
+            botao.style.backgroundColor='blue'
+        }
+        function saiu(){
+            botao.style.backgroundColor='black'
+            
+        }
+    </script>
 </body>
 </html>

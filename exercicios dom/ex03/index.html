@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+    <style>
+        div{
+            background-color: #1200b8;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 20px;
+        }
+        input{
+            margin: 80px 57px;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="clicar()" id="div">
+        <input type="button" value="clique aqui">
+    </div>
+    <script>
+        let div=document.getElementById('div')
+        let cont=1
+        function clicar(){
+            if(cont%2!=0){
+                div.style.background='none'
+                cont++;
+            }
+            else{
+                div.style.background='#1200b8'
+                cont++;
+            }
+        }
+    </script>
+</body>
+</html>
