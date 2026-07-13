@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button img{
+            position: absolute;
+            width: 30px;
+            left: 4%;
+            bottom: 93%;
+        }
+        button{
+            border: none;
+            background-color: transparent;
+        }
+        header{
+            background-image: linear-gradient(180deg, white, rgb(235, 235, 235));
+            height: 80px;
+            margin: -8px -8px 0px -8px;
+        }
+        ul{
+            display: none;
+        }
+        .ativo{
+            display: block;
+            list-style: none;
+            background-color: rgb(34, 71, 190);
+            width: 130px;
+            height: 270px;
+            margin: 0px 0px 10px -8px;
+            border-radius: 0px 0px 10px 0px;
+            color: aliceblue;
+            line-height: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button type="button" class="botao"><img src="menu.png" alt=""></button>
+    </header>
+    <main>
+        <ul class="ola">
+            <li>inicio</li>
+            <li>sobre</li>
+            <li>serviços</li>
+            <li>contato</li>
+        </ul>
+    </main>
+    <script>
+        let botao = document.querySelector('.botao')
+        let ul = document.querySelector('.ola')
+
+        botao.addEventListener('click', clicar)
+
+        function clicar(){
+            ul.classList.toggle('ativo')
+        }
+    </script>
+</body>
+</html>
