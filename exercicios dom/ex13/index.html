@@ -38,6 +38,9 @@
             background-color: black;
             color: aliceblue;
         }
+        .bodybranco{
+            background-color: black;
+        }
     </style>
 </head>
 <body>
@@ -52,12 +55,14 @@
         let butao = document.querySelector('.botao')
         let cabecalho = document.querySelector('.cabecalho')
         let main = document.querySelector('.principal')
+        let body = document.querySelector('body')
 
         butao.addEventListener('click', clicar)
         function clicar(){
             cabecalho.classList.toggle('branco')
             butao.classList.toggle('botaobranco')
             main.classList.toggle('principalbranco')
+            body.classList.toggle('bodybranco')            
             if (butao.classList.contains('botaobranco')){
                 butao.value='escuro'
             }
