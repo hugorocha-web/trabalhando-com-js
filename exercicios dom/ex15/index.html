@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        img.principal{
+            height: 200px;
+        }
+        main{
+            border-radius: 15px;
+            margin: auto;
+            background-color: beige;
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            transition-duration: 0.5s;
+        }
+    
+        body.comprado main{
+            background-color: rgb(137, 255, 133);
+            color: rgb(4, 131, 0);
+        }
+        .botao{
+            border-radius:10px;
+            background-color: blue;
+            color: aliceblue;
+            border: none;
+            width: 170px;
+            height: 45px;
+            transition-duration: 0.5s;
+            margin-top: 15px;
+
+        }
+        body.comprado .botao{
+            background-color: rgb(2, 102, 40);
+        }
+        .menu{
+            width: 30px;
+            height: 30px;
+            margin: 10px 0px 0px 220px;
+            transform: translateY(-1500);
+            opacity: 0;
+            transition-duration: 0.5s;
+        }
+        body.comprado .menu{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="menu.png" alt="" class="menu">
+        <br>
+        <img src="—Pngtree—electronics headset illustration_4704726.png" alt="" class="principal">
+        <h2>Fone de ouvido</h2>
+        <p>
+            R$189,90
+        </p>
+        <input type="button" value="comprar" class="botao">
+    </main>
+    <script>
+        let botao = document.querySelector('.botao') 
+        let body = document.querySelector('body')
+
+        botao.addEventListener('click', clicar)
+        function clicar(){
+            body.classList.toggle('comprado')
+            console.log(botao)
+            if(body.classList.contains('comprado')){
+                botao.value='comprado'
+            }
+            else{
+            botao.value='comprar'
+        }
+        }   
+    </script>
+</body>
+</html>
