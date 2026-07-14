@@ -3,11 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docu</title>
+    <title>ex16</title>
+    <style>
+        nav{
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(253, 253, 253);
+            padding: 30px;
+            margin: -10px -8px 0px -9px ;
+            
+        }
+        nav h2{
+            font-family:Arial, Helvetica, sans-serif ;
+            
+        }
+        div{
+            text-align: center;
+        }
+        .sobre{
+            opacity: 0;
+            background-color: rgb(60, 60, 207);
+            padding: 30px;
+            color: white;
+            transition-duration: 0.6s;
+            margin: 0px -8px;
+
+        }
+        
+        .projeto{
+            opacity:0 ;
+            background-color: rgb(60, 60, 207);
+            padding: 30px;
+            color: white;
+            margin: 0px -8px;
+            transition-duration: 0.6s;
+            transform: translateY(-250px);
+
+
+
+        }
+        .contato{
+            transition-duration: 0.6s;
+            opacity:0 ;
+            background-color: rgb(60, 60, 207);
+            padding: 30px;
+            color: white;
+            margin: 0px -8px;
+            transform: translateY(-500px);
+
+
+        }
+        .under{
+            text-decoration: underline;
+        }
+        .clicadosobre{
+            opacity: 1;
+        }
+        .clicadoprojeto{
+            opacity: 1;
+        }
+        .clicadocontato{
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <script>
+    <header>
+        <nav>
+            <h2 id="sobre">sobre</h2>
+            <h2 id="projeto">projeto</h2>
+            <h2 id="contato">contato</h2>
+        </nav>
+    </header>
+    <main>
         
+        <div class="sobre">
+            <h1>sobre</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sequi repellat velit unde reiciendis eius aliquam, nulla suscipit! Veniam minus hic, illum odio sunt ab ratione velit voluptates dolor soluta!</p>
+        </div>
+        <div class="projeto">
+            <h1>projeto</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sequi repellat velit unde reiciendis eius aliquam, nulla suscipit! Veniam minus hic, illum odio sunt ab ratione velit voluptates dolor soluta!</p>
+        </div>
+        <div class="contato">
+            <h1>contato</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sequi repellat velit unde reiciendis eius aliquam, nulla suscipit! Veniam minus hic, illum odio sunt ab ratione velit voluptates dolor soluta!</p>
+        </div>
+    </main>
+    <script>
+        let sobre = document.querySelector('#sobre')
+        let csobre = document.querySelector('.sobre')
+        let projeto = document.querySelector('#projeto')
+        let cprojeto = document.querySelector('.projeto')
+        let contato = document.querySelector('#contato')
+        let ccontato = document.querySelector('.contato')
+
+        sobre.addEventListener('click', clicarsobre)
+        projeto.addEventListener('click', clicarprojeto)
+        contato.addEventListener('click', clicarcontato)
+
+        function clicarsobre(){
+            csobre.classList.toggle('clicadosobre')
+            
+            sobre.classList.toggle('under')
+            if(cprojeto.classList.contains('clicadoprojeto')){
+                cprojeto.classList.remove('clicadoprojeto')
+                projeto.classList.remove('under')
+            }
+            if(ccontato.classList.contains('clicadocontato')){
+                ccontato.classList.remove('clicadocontato')
+                contato.classList.remove('under')
+            }
+            console.log(csobre)
+            console.log(cprojeto)
+            console.log(ccontato)
+        }
+        function clicarprojeto(){
+            cprojeto.classList.toggle('clicadoprojeto')
+            projeto.classList.toggle('under')
+            if(csobre.classList.contains('clicadosobre')){
+                csobre.classList.remove('clicadosobre')
+                sobre.classList.remove('under')
+            }
+            if(ccontato.classList.contains('clicadocontato')){
+                ccontato.classList.remove('clicadocontato')
+                contato.classList.remove('under')
+            }
+            console.log(cprojeto)
+            console.log(csobre)
+            console.log(ccontato)
+        }
+        function clicarcontato(){
+            ccontato.classList.toggle('clicadocontato')
+            contato.classList.toggle('under')
+            if(cprojeto.classList.contains('clicadoprojeto')){
+                cprojeto.classList.remove('clicadoprojeto')
+                projeto.classList.remove('under')
+            }
+            if(csobre.classList.contains('clicadocontato')){
+                csobre.classList.remove('clicadosobre')
+                sobre.classList.remove('under')
+                
+            }
+            console.log(ccontato)
+            console.log(csobre)
+            console.log(cprojeto)
+        }
+
+
     </script>
 </body>
 </html>
