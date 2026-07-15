@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex16</title>
     <style>
+        main{
+            position: relative;
+        }
         nav{
             border-bottom: 1px solid black;
             display: flex;
@@ -22,6 +25,8 @@
             text-align: center;
         }
         .sobre{
+            position: absolute;
+            width: 100%;
             opacity: 0;
             background-color: rgb(60, 60, 207);
             padding: 30px;
@@ -32,11 +37,13 @@
         }
         
         .projeto{
-            opacity:0 ;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
             background-color: rgb(60, 60, 207);
             padding: 30px;
             color: white;
-            margin: -213px -8px;
+            margin:  -8px;
             transition-duration: 0.6s;
 
 
@@ -44,11 +51,13 @@
         }
         .contato{
             transition-duration: 0.6s;
-            opacity:0 ;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
             background-color: rgb(60, 60, 207);
             padding: 30px;
             color: white;
-            margin: -300px -8px;
+            margin:  -8px;
 
 
         }
